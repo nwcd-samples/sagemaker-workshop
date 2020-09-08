@@ -1,0 +1,102 @@
+venv/*
+*/cdk.out/*
+
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+#*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+
+__pycache__/
+*/__pycache__
+/sample_data/*
+*/dataset/*
+/models/
+*/models
+/.idea/*
+/logs/*
+/classes/*
+!.mvn/wrapper/maven-wrapper.jar
+.DS_Store
+.idea/
+
+.DS_Store
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+.ipynb_checkpoints/
+.ipynb_checkpoints/*
+.ipynb_checkpoints
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+*/target/*
+*/target
+/target/*
+/target/
+*/dataset
+/sample_data/*
+
+/raw-data/*
+*/cdk.context.json
+cdk-infra/cdk.context.json
+/output/*
+cdk.out*
+*cdk.out*
+build.sh
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+.idea/
+.idea/*
+
+*/.env/
+.env/*
+*/.env/*
+
+/cdk.out/
+*/cdk.out/
+
+*/temp/*
+*/temp
+/temp/*
+/temp/*
+/temp/
+./temp/
+cdk.context.json
+
+*.zip
