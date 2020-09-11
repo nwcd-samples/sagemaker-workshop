@@ -1,0 +1,7 @@
+# 利用Amazon SageMaker内置算法进行图片分类
+
+## 升级相应Kernel中sagemaker版本
+* conda env list
+* source  activate mxnet_p36 
+* pip install sagemaker --upgrade <br>
+执行完以上命令重启kenrnel
