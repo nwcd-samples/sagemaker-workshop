@@ -11,8 +11,8 @@
 本项目将以深度学习中的经典问题，图片分类（猫狗分类）为案例，介绍如何使用Amazon SageMaker进行模型训练和推理部署。
 
 该项目包含两种解决方案：
-* 使用Amazon SageMaker内置的图片分类算法进行模型训练和部署
-* 使用开源的图片分类算法进行代码编写，通过Amazon SageMaker进行封装在AWS平台上进行模型训练和部署
+* 使用Amazon SageMaker内置的图片分类算法进行模型训练和部署，该部分代码在image-classification目录下。
+* 使用开源的图片分类算法进行代码编写，通过Amazon SageMaker进行封装在AWS平台上进行模型训练和部署，该部分相关代码在encapsulation目录下。
 
 ## 准备工作
 为了使用Amazon SageMaker您只需要拥有一个AWS的账号，我们就可以实践起来。
