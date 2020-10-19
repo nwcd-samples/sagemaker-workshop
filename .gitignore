@@ -1,3 +1,8 @@
+#this project specific
+training/cfg/data.yaml
+
+
+
 venv/*
 */cdk.out/*
 

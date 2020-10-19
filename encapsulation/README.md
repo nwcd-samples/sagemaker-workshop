@@ -2,22 +2,6 @@
 
 演示使用Sagemaker 封装图片分类算法, 使用TensorFlow-server 部署模型，并在客户端进行调用。 
 
-# 使用步骤
-
-##  本地测试
-```
-if [ ! -d "output" ];then
-mkdir output
-fi
-
-python source/train.py --epoch_count=20 --batch_size=32 --input_dir='./cat-vs-dog' --output_dir='./output'
-
-docker build -t sagemaker-demo .
-
-docker run -p 8501:8501 -d sagemaker-demo
-
-```
-
 
 ## 使用sagemaker 训练
 

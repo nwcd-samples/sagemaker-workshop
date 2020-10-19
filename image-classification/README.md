@@ -11,9 +11,10 @@ Image-classification-lst-format.ipynb演示了利用Amazon SageMaker内置算法
 点击左上角上传按钮，将Image-classification-lst-format.ipynb文件上传到笔记本实例中。
 
 ## 升级相应Kernel中sagemaker版本
-* conda env list
-* source  activate mxnet_p36 
-* pip install sagemaker --upgrade <br>
+```
+source  activate mxnet_p36 
+pip install sagemaker --upgrade
+```
 执行完以上命令重启kenrnel
 
 
