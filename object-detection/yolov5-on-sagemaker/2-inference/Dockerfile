@@ -6,14 +6,14 @@ RUN apt-get update
 RUN apt-get install -y --no-install-recommends nginx net-tools\
     && rm -rf /var/lib/apt/lists/*
 
+RUN pip install flask gevent gunicorn boto3 -i https://pypi.tuna.tsinghua.edu.cn/simple && \
+        rm -rf /root/.cache
+
 # RUN mkdir /opt/ml/code
 WORKDIR /opt/ml/code
 COPY source ./
 
 RUN pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
-
-RUN pip install flask gevent gunicorn boto3 -i https://pypi.tuna.tsinghua.edu.cn/simple && \
-        rm -rf /root/.cache
         
 # Set some environment variables. PYTHONUNBUFFERED keeps Python from buffering our standard
 # output stream, which means that logs can be delivered to the user quickly. PYTHONDONTWRITEBYTECODE

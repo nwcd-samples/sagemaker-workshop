@@ -20,10 +20,19 @@
 为了使用Amazon SageMaker您只需要拥有一个AWS的账号，我们就可以实践起来。
 
 ## 常见问题
-### 升级相应Kernel中sagemaker版本
+### 1.升级相应Kernel中sagemaker版本
 以升级mxnet_p36 kernal中sagemaker为例
 ```
 source  activate mxnet_p36 
 pip install sagemaker --upgrade
 ```
 执行完以上命令重启kenrnel
+### 2.提示`ResourceLimitExceeded`
+如果训练时，提示类似以下内容：
+```
+ResourceLimitExceeded: An error occurred (ResourceLimitExceeded) when calling the CreateTrainingJob operation: The account-level service limit 'ml.p3.2xlarge for spot training job usage' is 0 Instances, with current utilization of 0 Instances and a request delta of 1 Instances. Please contact AWS support to request an increase for this limit.
+```
+为避免误操作，默认未开通ml机型大型实例，需要在支持控制面板创建案例，选择提高服务限制。  
+限制类型选择`SageMaker`，根据需要选择对应区域，资源类型选择`SageMaker培训`，限制选择期望的机型。  
+如果要使用Spot实例进行训练，在描述中说明，参考：`希望提升宁夏区域的 Sagemaker Managed Spot Training ml.p3.2xlarge 限额为1。`  
+如果要对推理的机型进行提高服务限制，资源类型选择`SageMaker托管`。
