@@ -21,12 +21,13 @@
 
 ## 常见问题
 ### 1.升级相应Kernel中sagemaker版本
-以升级mxnet_p36 kernal中sagemaker为例
+以升级tensorflow_p36 kernal中sagemaker为例，可先使用`conda env list`查看当前所有虚拟环境
 ```
-source  activate mxnet_p36 
+conda env list
+source activate tensorflow_p36
 pip install sagemaker --upgrade
 ```
-执行完以上命令重启kenrnel
+执行完以上命令重启kernel
 ### 2.提示`ResourceLimitExceeded`
 如果训练时，提示类似以下内容：
 ```
