@@ -8,7 +8,7 @@ img=$(cat $FP_PARA | jq -r '.IMG_SIZE')
 batch=$(cat $FP_PARA | jq -r '.BATCH')
 epochs=$(cat $FP_PARA | jq -r '.EPOCHS')
 echo "============="
-echo python /opt/yolov5/train.py --img $img --batch $batch --hyp $hyp --epochs $epochs --data $data --cfg $yolo --weights $weight
+echo python /opt/code/train.py --img $img --batch $batch --hyp $hyp --epochs $epochs --data $data --cfg $yolo --weights $weight
 echo "============="
-python /opt/yolov5/train.py --img $img --batch $batch --hyp $hyp --epochs $epochs --data $data --cfg $yolo --weights $weight
+python /opt/code/train.py --img $img --batch $batch --hyp $hyp --epochs $epochs --data $data --cfg $yolo --weights $weight
 cp -r /opt/code/runs /opt/ml/model/

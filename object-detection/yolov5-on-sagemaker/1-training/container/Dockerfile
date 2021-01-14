@@ -17,11 +17,9 @@ RUN apt-get update \
 RUN ldconfig -v
 
 
-RUN cd opt && git clone https://github.com/ultralytics/yolov5
-RUN pip install -r /opt/yolov5/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
-
-ENV PATH="/opt/yolov5:${PATH}"
 WORKDIR /opt/code
+COPY dockersource ./
+RUN pip install -r /opt/code/requirements.txt -i https://opentuna.cn/pypi/web/simple/
 ## https://github.com/aws/sagemaker-pytorch-training-toolkit/issues/143#issuecomment-566776288
 ## https://github.com/aws/sagemaker-pytorch-training-toolkit/blob/upgrade-training-toolkit/docker/build_artifacts/start_with_right_hostname.sh
 ## https://github.com/aws/deep-learning-containers/blob/v2.0-pt-1.5.1-py36/pytorch/training/docker/1.5.1/py3/Dockerfile.gpu#L181
