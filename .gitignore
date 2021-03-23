@@ -1,4 +1,9 @@
 #this project specific
+anomaly-detection/PaDiM/0-preparation/bottle
+anomaly-detection/PaDiM/1-training/result
+anomaly-detection/PaDiM/2-inference/result
+anomaly-detection/PaDiM/2-inference/source/train.pkl
+image-classification/image-*
 object-detection/yolov5-on-sagemaker/0-preparation/biaozhu/*
 object-detection/yolov5-on-sagemaker/1-training/container/dockersource/
 object-detection/yolov5-on-sagemaker/1-training/container/local_test/model/
@@ -7,6 +12,7 @@ object-detection/yolov5-on-sagemaker/1-training/container/local_test/input/data/
 object-detection/yolov5-on-sagemaker/1-training/container/local_test/input/data/training/labels/*
 object-detection/yolov5-on-sagemaker/1-training/runs/*
 object-detection/yolov5-on-sagemaker/2-inference/source/yolov5s.pt
+object-detection/yolov5-on-sagemaker/2-inference/result/*
 
 
 
