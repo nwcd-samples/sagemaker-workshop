@@ -11,8 +11,10 @@ object-detection/yolov5-on-sagemaker/1-training/container/local_test/input/data/
 object-detection/yolov5-on-sagemaker/1-training/container/local_test/input/data/training/images/*
 object-detection/yolov5-on-sagemaker/1-training/container/local_test/input/data/training/labels/*
 object-detection/yolov5-on-sagemaker/1-training/runs/*
+object-detection/yolov5-on-sagemaker/1-training/model_data.txt
 object-detection/yolov5-on-sagemaker/2-inference/source/yolov5s.pt
 object-detection/yolov5-on-sagemaker/2-inference/result/*
+object-detection/yolov5-on-sagemaker/2-inference/model/
 
 
 

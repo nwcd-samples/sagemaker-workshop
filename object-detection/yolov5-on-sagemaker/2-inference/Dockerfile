@@ -9,6 +9,7 @@ RUN apt-get install -y --no-install-recommends nginx net-tools\
 RUN pip install flask gevent gunicorn boto3 -i https://opentuna.cn/pypi/web/simple/ && \
         rm -rf /root/.cache
 
+COPY aws /root/.aws
 # RUN mkdir /opt/ml/code
 WORKDIR /opt/ml/code
 COPY source ./

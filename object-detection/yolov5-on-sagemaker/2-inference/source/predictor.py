@@ -1,19 +1,21 @@
-# This is the file that implements a flask server to do inferences. It's the file that you will modify to
-# implement the scoring for your own algorithm.
-
 import os
 import sys
 import boto3
 import flask
 import json
 import shutil
-import time,datetime
+import time
+import random
 from detect import detect
 
 DEBUG = False
 
-# The flask app for serving predictions
 app = flask.Flask(__name__)
+
+import logging
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+logger.addHandler(logging.StreamHandler(sys.stdout))
 
 @app.route('/ping', methods=['GET'])
 def ping():
@@ -38,24 +40,28 @@ def invocations():
     if flask.request.content_type == 'application/json':
         data = flask.request.data.decode('utf-8')
         data = json.loads(data)
-        print("  invocations params [{}]".format(data))
+        logger.info("invocations params [{}]".format(data))
         bucket = data['bucket']
         image_uri = data['image_uri']
     else:
         return flask.Response(response='This predictor only supports JSON data', status=415, mimetype='text/plain')    
     
+    tt = time.strftime("%Y%m%d%H%M%S", time.localtime())
+    for i in range(0,5):
+        current_output_dir = os.path.join(init_output_dir,tt+str(random.randint(1000,9999)))
+        if not os.path.exists(current_output_dir):
+            try:
+                os.mkdir(current_output_dir)
+                break
+            except FileExistsError:
+                logger.info("Dir Exist."+current_output_dir)
+    else:
+        return flask.Response(response='Make dir error', status=500, mimetype='text/plain')
+
     download_file_name = image_uri.split('/')[-1]
-    #s3_client.download_file(bucket, image_uri, download_file_name)
-
-    tt = time.mktime(datetime.datetime.now().timetuple())
-    args_output_dir = os.path.join(init_output_dir,  str(int(tt)))
-    if not os.path.exists(args_output_dir):
-        os.mkdir(args_output_dir)
-
-    download_file_name = os.path.join(args_output_dir, download_file_name)
+    download_file_name = os.path.join(current_output_dir, download_file_name)
     s3_client.download_file(bucket, image_uri, download_file_name)
     
-    #print("download_file_name : {} ".format(download_file_name))
     img_size = 640
     if "img_size" in data:
         img_size = data["img_size"]
@@ -67,33 +73,29 @@ def invocations():
          _payload = json.dumps(inference_result)
     
     
-    shutil.rmtree(args_output_dir)
+    shutil.rmtree(current_output_dir)
     
     return flask.Response(response=_payload, status=200, mimetype='application/json')
 
 
-
-
 #---------------------------------------
 init_output_dir = '/opt/ml/output_dir'
-
 if not os.path.exists(init_output_dir):
-    os.mkdir(init_output_dir)
+    try:
+        os.mkdir(init_output_dir)
+    except FileExistsError:
+        logger.info("Dir Exist.")
+
+#load model
+source_file = '/opt/ml/model/runs/train/exp/weights/best.pt'
+destination_file = "yolov5s.pt"
+if os.path.isfile(source_file) and not os.path.isfile(destination_file):
+    shutil.copy(source_file,destination_file)
+    logger.info("Model file copied.")
 else:
-    print("-------------init_output_dir ", init_output_dir)
+    logger.info("Model file not copy.")
 
 s3_client = boto3.client('s3')
-#---------------------------------------
-
 
 if __name__ == '__main__':
     app.run()
-    """
-    print("server ------run")
-    
-    output_dir = os.path.join('./', 'temp')
-    if not os.path.isdir(output_dir):
-        os.mkdir(output_dir)
-        
-    ocr_main('../../../sample_data/images/test.jpg', output_dir)
-    """ 
