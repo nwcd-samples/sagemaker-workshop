@@ -1,9 +1,0 @@
-{
-   "FP_DATA": "/opt/ml/input/data/training/cfg/data.yaml",
-   "FP_YOLO": "/opt/ml/input/data/training/cfg/yolov5s.yaml",
-   "FP_HYP": "/opt/ml/input/data/training/cfg/hyp.yaml",    
-   "FP_WEIGHT": "/opt/ml/input/data/training/weights/yolov5s.pt",
-   "IMG_SIZE": "640",
-   "EPOCHS": "15",
-   "BATCH": "16"
-}

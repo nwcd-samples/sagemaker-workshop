@@ -1,0 +1,9 @@
+{
+   "data": "/opt/ml/input/data/training/cfg/data.yaml",
+   "cfg": "/opt/ml/input/data/training/cfg/yolov5s.yaml",
+   "hyp": "/opt/ml/input/data/training/cfg/hyp.yaml",    
+   "weights": "/opt/ml/input/data/training/weights/yolov5s.pt",
+   "img": "640",
+   "epochs": "2",
+   "batch": "16"
+}

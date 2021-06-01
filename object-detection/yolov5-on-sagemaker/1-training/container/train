@@ -1,14 +1,10 @@
 #! /bin/bash
-FP_PARA=/opt/ml/input/data/training/cfg/train-args.json
-data=$(cat $FP_PARA | jq -r '.FP_DATA')
-yolo=$(cat $FP_PARA | jq -r '.FP_YOLO')
-weight=$(cat $FP_PARA | jq -r '.FP_WEIGHT')
-hyp=$(cat $FP_PARA | jq -r '.FP_HYP')
-img=$(cat $FP_PARA | jq -r '.IMG_SIZE')
-batch=$(cat $FP_PARA | jq -r '.BATCH')
-epochs=$(cat $FP_PARA | jq -r '.EPOCHS')
+hpfile=/opt/ml/input/config/hyperparameters.json
+echo "========hyperparameters======="
+cat $hpfile
+hp=$(cat $hpfile |jq -r -c 'to_entries | .[] |"--"+ .key + " " + .value ' | tr '\n' ' ')
 echo "============="
-echo python /opt/code/train.py --img $img --batch $batch --hyp $hyp --epochs $epochs --data $data --cfg $yolo --weights $weight
+echo python /opt/code/train.py $hp
 echo "============="
-python /opt/code/train.py --img $img --batch $batch --hyp $hyp --epochs $epochs --data $data --cfg $yolo --weights $weight
+python /opt/code/train.py $hp
 cp -r /opt/code/runs /opt/ml/model/
