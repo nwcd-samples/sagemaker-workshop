@@ -1,5 +1,8 @@
 # Amazon SageMaker Workshop
 利用Amazon SageMaker进行机器学习和深度学习开发。
+## 版权说明
+本repository为多个软件（算法或项目）的目录，不是一个具体软件。各个软件（算法或项目）在具体文件夹中，比如[anomaly-detection/PaDiM](anomaly-detection/PaDiM)，由于上游软件（算法或项目）的LICENSE不同，各个软件（算法或项目）的LICENSE在具体软件（算法或项目）中提供。  
+本目录收集的各个软件（算法或项目）互相独立，无依赖。
 ## 免责声明
 建议测试过程中使用此方案，生产环境使用请自行考虑评估。
 
@@ -7,10 +10,10 @@
 
 欢迎联系参与方案共建和提交方案需求, 也欢迎在 github 项目 issue 中留言反馈 bugs。
 
-## 项目说明
-本项目将以深度学习中的常用场景，介绍如何使用Amazon SageMaker进行模型训练和推理部署。
+## 内容简介
+以深度学习中的常用场景，介绍如何使用Amazon SageMaker进行模型训练和推理部署。
 
-该项目包含以下内容：
+本目录有以下内容：
 * [异常检测anomaly-detection](anomaly-detection/PaDiM)，使用PaDiM演示异常检测
 * [图片分类image-classification](image-classification)，使用Amazon SageMaker内置的图片分类算法进行模型训练和部署
 * [对象检测object-detection](object-detection/yolov5-on-sagemaker)，使用YOLOv5算法演示对象检测
