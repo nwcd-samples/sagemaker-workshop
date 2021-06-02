@@ -15,6 +15,9 @@ object-detection/yolov5-on-sagemaker/1-training/model_data.txt
 object-detection/yolov5-on-sagemaker/2-inference/source/yolov5s.pt
 object-detection/yolov5-on-sagemaker/2-inference/result/*
 object-detection/yolov5-on-sagemaker/2-inference/model/
+hyperspectral/DeepHyperX/1-preparation/dataset/
+hyperspectral/DeepHyperX/1-preparation/Datasets/
+hyperspectral/DeepHyperX/2-training/result/
 
 
 
