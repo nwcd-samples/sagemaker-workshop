@@ -45,6 +45,7 @@ venv/*
 *.zip
 *.tar.gz
 *.rar
+*.pth
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
@@ -62,6 +63,13 @@ __pycache__/
 !.mvn/wrapper/maven-wrapper.jar
 .DS_Store
 .idea/
+
+
+
+*Dataset/
+*Datasets/
+*checkpoints/
+*checkpoint/
 
 .DS_Store
 ### STS ###
