@@ -1,0 +1,2 @@
+# TensorFlow distributed training on SageMaker
+本workshop演示TensorFlow在SageMaker上使用smdistributed进行分布式训练。  

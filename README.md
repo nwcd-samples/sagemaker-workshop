@@ -14,11 +14,15 @@
 以深度学习中的常用场景，介绍如何使用Amazon SageMaker进行模型训练和推理部署。
 
 本目录有以下内容：
-* [异常检测anomaly-detection](anomaly-detection/PaDiM)，使用PaDiM演示异常检测
-* [图片分类image-classification](image-classification)，使用Amazon SageMaker内置的图片分类算法进行模型训练和部署
-* [对象检测object-detection](object-detection/yolov5-on-sagemaker)，使用YOLOv5算法演示对象检测
-* [封装自定义算法encapsulation](encapsulation)，使用自定义算法，通过Amazon SageMaker进行封装在AWS平台上进行模型训练和部署
-* [运行时客户端调用runtime](runtime)，[Java SDK2调用推理示例](runtime/Java2)(推荐)、[Java SDK1调用推理示例](runtime/Java)
+- [异常检测anomaly-detection](anomaly-detection/PaDiM/README.md)，使用PaDiM演示异常检测
+- [图片分类image-classification](image-classification/README.md)，使用Amazon SageMaker内置的图片分类算法进行模型训练和部署
+- [对象检测object-detection](object-detection/yolov5-on-sagemaker/README.md)，使用YOLOv5算法演示对象检测
+- [高光谱hyperspectral](hyperspectral/DeepHyperX/README.md),使用DeepHyperX算法对高光谱进行处理
+- [封装自定义算法encapsulation](encapsulation/README.md)，使用自定义算法，通过Amazon SageMaker进行封装在AWS平台上进行模型训练和部署
+- [分布式训练distributed-training](distributed-training)，多机多卡分布式训练，[PyTorch](distributed-training/PyTorch/README.md)、[TensorFlow](distributed-training/TensorFlow/data-parallel/README.md)
+- [训练数据输入](training-data-input/README.md)，解决直接从S3上下载训练数据耗时过长问题；也支持从EFS获取训练数据
+- [在线更新模型](update-endpoint/UpdateEndpoint.ipynb)，在不停止endpoint服务情况下，更新模型
+- [运行时客户端调用runtime](runtime)，[Java SDK2调用推理示例](runtime/Java2)(推荐)、[Java SDK1调用推理示例](runtime/Java)
 
 ## 准备工作
 为了使用Amazon SageMaker您只需要拥有一个AWS的账号，我们就可以实践起来。
